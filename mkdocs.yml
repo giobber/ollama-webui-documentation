@@ -1,0 +1,6 @@
+site_name: "Ollama & Open WebUI"
+# theme: landing
+nav:
+  - Home: index.md
+  - Installazione: install.md
+  - Utilizzo: usage.md
