@@ -2,5 +2,8 @@ site_name: "Ollama & Open WebUI"
 # theme: landing
 nav:
   - Home: index.md
-  - Installazione: install.md
+  - Installazione:
+      - Ollama: install/ollama.md
+      - Docker Desktop: install/docker.md
+      - Open WebUI: install/open-webui.md
   - Utilizzo: usage.md
