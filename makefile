@@ -4,7 +4,7 @@ venv:
 	uv venv .venv
 
 envfile:
-	cp .env.default .env
+	cp docker/.env.default docker/.env
 
 install:
 	uv pip install mkdocs mkdocs-landing
