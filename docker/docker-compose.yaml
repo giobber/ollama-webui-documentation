@@ -1,8 +1,18 @@
-name: llm4proposal
+name: ${PROJECT_NAME:-llm4proposal}
 
 services:
+  ollama:
+    container_name: ${PROJECT_NAME:-llm4proposal}_ollama
+    env_file: .env
+    image: ollama/ollama
+    restart: unless-stopped
+    ports:
+      - "${OLLAMA_PORT:-11434}:11434"
+    volumes:
+      - ollama:/root/.ollama
+
   open-webui:
-    container_name: llm4proposal_open-webui
+    container_name: ${PROJECT_NAME:-llm4proposal}_open-webui
     env_file: .env
     image: ghcr.io/open-webui/open-webui:cuda
     restart: unless-stopped
@@ -20,3 +30,6 @@ services:
 
 volumes:
   open-webui:
+    name: ${PROJECT_NAME:-llm4proposal}_open-webui
+  ollama:
+    name: ${PROJECT_NAME:-llm4proposal}_ollama
