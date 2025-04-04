@@ -2,8 +2,9 @@ name: llm4proposal
 
 services:
   open-webui:
-    container_name: open-webui
-    image: ghcr.io/open-webui/open-webui:main
+    container_name: llm4proposal_open-webui
+    env_file: .env
+    image: ghcr.io/open-webui/open-webui:cuda
     restart: unless-stopped
     ports:
       - "${WEBUI_PORT:-3000}:8080"
