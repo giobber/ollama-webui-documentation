@@ -1,4 +1,5 @@
-# Sutra LLM 4 Proposal documentation and resources
+# Sutra LLM4Proposal
+## Documentation & Resources
 This repository contains all the resources (documentation, installation guides and configuration) for the project LLM 4 Proposal (sometimes also called LLM 4 Horizon)
 
 The project aims to develop a strategy to maximise confidentiality when using LLM AI models as tools for writing and composing a proposal for EU Funded Projects (like Horizon)
