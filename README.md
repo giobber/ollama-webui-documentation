@@ -11,6 +11,17 @@ In this repository you can find:
 
 To see the actual version of the documentation you can navigate the [docs](docs/index.md) folder or go to the [Github page](https://giobber.github.io/sutra-llm4proposal/) of this repository
 
+## Use docker environment
+For a more complete guide go to the documentation site
+
+```bash
+# I needed create .env file and edit settings
+$ cp docker/.env.default docker/.env
+
+# Create docker containers
+$ docker compose -f docker/docker-compose.yaml up -d
+```
+
 ## MKDocs
 ### Installation
 ```bash
