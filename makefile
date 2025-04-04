@@ -1,7 +1,10 @@
-.PHONY: venv install serve build
+.PHONY: venv envfile install serve build
 
 venv:
 	uv venv .venv
+
+envfile:
+	cp .env.default .env
 
 install:
 	uv pip install mkdocs mkdocs-landing
