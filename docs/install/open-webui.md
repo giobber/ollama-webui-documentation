@@ -1,10 +1,10 @@
 # Come installare open-webui
+Official documentation on how to use [Open WebUI](https://docs.openwebui.com/) with **docker-compose** can be found at this [link](https://docs.openwebui.com/getting-started/quick-start/) (You need to select `docker-compose` at the start of the article)
 
-Istruzioni su come usare [Open WebUI](https://docs.openwebui.com/) con **docker-compose** può essere trovata a questo [link](https://docs.openwebui.com/getting-started/quick-start/)
+Additional information on how to make **open-webui** and **ollama** work togheter can be found in [this guide](https://docs.openwebui.com/getting-started/quick-start/starting-with-ollama)
 
-Informazioni aggiuntive per l'interazione tra **open-webui** e **ollama** possono essere trovate in [questa guida](https://docs.openwebui.com/getting-started/quick-start/starting-with-ollama)
-
-In breve inserisci all'interno del file `docker-compose.yml` il seguente testo:
+## Just give me the docker-compose
+Here is the docker-compose I use. For the most recent version go to [this repository](https://github.com/giobber/sutra-llm4proposal/tree/develop/docker)
 
 ```yaml
 services:
