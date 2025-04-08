@@ -1,9 +1,10 @@
-site_name: "Ollama & Open WebUI"
+site_name: "LLM 4 Horizon"
 # theme: landing
 nav:
   - Home: index.md
-  - Installazione:
+  - Installation:
       - Ollama: install/ollama.md
       - Docker Desktop: install/docker.md
       - Open WebUI: install/open-webui.md
-  - Utilizzo: usage.md
+      - All In One: install/all-in-one.md
+  - Usage: usage.md
