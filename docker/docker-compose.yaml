@@ -29,6 +29,8 @@ services:
       - "${WEBUI_PORT:-3000}:8080"
     volumes:
       - open-webui:/app/backend/data
+    environment:
+      - OLLAMA_BASE_URLS=http://ollama:11434
     # This section is required to enable GPU usage
     deploy:
       resources:
