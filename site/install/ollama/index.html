@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Ollama - Ollama & Open WebUI</title>
+        <title>Ollama - LLM 4 Horizon</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/fontawesome.min.css" rel="stylesheet">
         <link href="../../css/brands.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="../..">Ollama & Open WebUI</a>
+                <a class="navbar-brand" href="../..">LLM 4 Horizon</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -38,7 +38,7 @@
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Installazione</a>
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Installation</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -52,10 +52,14 @@
 <li>
     <a href="../open-webui/" class="dropdown-item">Open WebUI</a>
 </li>
+                                    
+<li>
+    <a href="../all-in-one/" class="dropdown-item">All In One</a>
+</li>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="../../usage/" class="nav-link">Utilizzo</a>
+                                <a href="../../usage/" class="nav-link">Usage</a>
                             </li>
                         </ul>
 
@@ -95,6 +99,14 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#come-installare-ollama" class="nav-link">Come installare ollama</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#docker-container-installation" class="nav-link">Docker container installation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#standalone-installation" class="nav-link">Standalone installation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -103,10 +115,17 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="come-installare-ollama">Come installare ollama</h1>
-<p>Andare su <a href="https://ollama.com/download">ollama.com/download</a>
-Scarica l'installer per il tuo sistema operativo (windows 11 è supportato)</p>
-<p>Esegui l'installer e segui la procedura guidata</p>
-<p>Ollama si avvierà all'avvio di windows e rimarra nella barra degli strumenti</p></div>
+<p>Ollama could be installed on his own or in a single docker-compose with open-webui</p>
+<p>For the installation with docker-compose go to the <a href="../all-in-one/">all-in-one</a> guide)</p>
+<h2 id="docker-container-installation">Docker container installation</h2>
+<p>You can install ollama as docker container on its own (we will not use this approach) with a command like this:</p>
+<pre><code class="language-bash">$ docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+</code></pre>
+<h2 id="standalone-installation">Standalone installation</h2>
+<p>For the standalone guide (we will not use this approach) I suggest to download the installer or follow the instruction from the <a href="https://ollama.com/download">website</a>.</p>
+<blockquote>
+<p>The stand-alone installation is useful if you want to test various model in a command line fashion, but it doesn't work well with the <strong>webui</strong> container. On Windows, Open WebUI container crashes if it cannot find the ollama instance when launching and Docker Desktop is usually launched before. Instead, on linux it requires additional network configuration badly documented on webui documentation.</p>
+</blockquote></div>
             </div>
         </div>
 

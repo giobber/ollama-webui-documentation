@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Docker Desktop - Ollama & Open WebUI</title>
+        <title>Docker Desktop - LLM 4 Horizon</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/fontawesome.min.css" rel="stylesheet">
         <link href="../../css/brands.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="../..">Ollama & Open WebUI</a>
+                <a class="navbar-brand" href="../..">LLM 4 Horizon</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -38,7 +38,7 @@
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Installazione</a>
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Installation</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -52,10 +52,14 @@
 <li>
     <a href="../open-webui/" class="dropdown-item">Open WebUI</a>
 </li>
+                                    
+<li>
+    <a href="../all-in-one/" class="dropdown-item">All In One</a>
+</li>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="../../usage/" class="nav-link">Utilizzo</a>
+                                <a href="../../usage/" class="nav-link">Usage</a>
                             </li>
                         </ul>
 
@@ -93,21 +97,21 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#installare-docker-su-windows" class="nav-link">Installare Docker su Windows</a>
+            <li class="nav-item" data-bs-level="1"><a href="#install-docker-on-windows" class="nav-link">Install Docker on Windows</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#post-installazione" class="nav-link">Post-installazione</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#come-avviare-docker-desktop-allavvio" class="nav-link">Come avviare Docker Desktop all'avvio</a>
+            <li class="nav-item" data-bs-level="2"><a href="#post-installation" class="nav-link">Post-installation</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#come-usare-docker-desktop" class="nav-link">Come usare docker desktop</a>
+            <li class="nav-item" data-bs-level="2"><a href="#starting-docker-desktop-on-boot" class="nav-link">Starting Docker Desktop on boot</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#come-usare-docker-compose" class="nav-link">Come usare docker compose</a>
+            <li class="nav-item" data-bs-level="2"><a href="#using-docker-desktop" class="nav-link">Using Docker Desktop</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#using-docker-compose" class="nav-link">Using Docker Compose</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -118,41 +122,40 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="installare-docker-su-windows">Installare Docker su Windows</h1>
+<h1 id="install-docker-on-windows">Install Docker on Windows</h1>
 <ol>
-<li>Sul sito <a href="https://www.docker.com">docker.com</a> si può scaricare un installer per Windows 10 e 11</li>
-<li>Per installarlo cliccare sull'eseguibile, scaricherà i suoi file e chiederà un riavvio</li>
-<li>Riavviare windows</li>
-<li>Al riavvio può comparire una schermata per aggiornare WSL, nel caso aggiornalo</li>
-<li>Sempre al riavvio apparirà una schermata per completare l'installazione di <strong>Docker Desktop</strong></li>
+<li>Download the installer for Windows 10 or 11 from the official <a href="https://www.docker.com">Docker website</a></li>
+<li>Click on the executable to download its files. It will ask for a restart</li>
+<li>Restart Windows</li>
+<li>After restarting, you may see a screen to update WSL, if so, update it</li>
+<li>After another restart, you will see a screen to complete the installation of <strong>Docker Desktop</strong></li>
 </ol>
-<h2 id="post-installazione">Post-installazione</h2>
-<p>Durante la procedura di configurazione di <strong>Docker Desktop</strong>
-1. Chiederà un'account -&gt; premi <code>salta</code>
-2. Chiederà che lavoro fai -&gt; premi <code>salta</code>
-3. Rimuovi qualche notifica e sei operativo</p>
-<h2 id="come-avviare-docker-desktop-allavvio">Come avviare Docker Desktop all'avvio</h2>
-<p>Di default [[Docker Desktop]] non viene lanciato all'avvio e ovviamente i suoi container non sono disponibili finché non è in esecuzione il servizio.
-Per avviarlo all'avvio andare in <code>impostazioni</code> e selezionare <code>Start Docker Desktop when you sign in to your computer</code>
-Inoltre se preferisci non avere la dashboard puoi de-selezionare l'opzione <code>Open Docker Dashboard when Docker Desktop starts</code></p>
-<h2 id="come-usare-docker-desktop">Come usare docker desktop</h2>
-<p>In generale per create un servizio docker devi inizialmente scaricare l'immagine e poi creare un container con quell'immagine.
-Ovviamente per configurazioni particolari di volumi e/o network c'è da guardare la documentazione ufficiale caso per caso.
-L'approccio mostrato in questa guida, in ogni caso, usa i <a href="https://docs.docker.com/compose/">Docker Compose</a></p>
-<h2 id="come-usare-docker-compose">Come usare docker compose</h2>
-<p>Per usare <strong>Docker Compose</strong> è necessario usare il terminale
-All'interno di docker desktop è possibile lanciare un terminale (default: powershell) premendo il pulsante <code>Terminal</code> in basso a destra</p>
+<h2 id="post-installation">Post-installation</h2>
+<p>During the configuration process of <strong>Docker Desktop</strong>:
+1. It will ask for an account -&gt; you can click "Skip"
+2. It will ask what you do -&gt; you can click "Skip"
+3. Remove some notifications and you're good to go</p>
+<h2 id="starting-docker-desktop-on-boot">Starting Docker Desktop on boot</h2>
+<p>By default, [[Docker Desktop]] does not start automatically, and its containers are not available until the service is running.
+To launch it on boot, go to <strong>Settings</strong> and select <strong>Start Docker Desktop when you sign in to your computer</strong>
+If you prefer not to have the dashboard show up at launch, unselect the option <strong>Open Docker Dashboard when Docker Desktop starts</strong></p>
+<h2 id="using-docker-desktop">Using Docker Desktop</h2>
+<p>To create a Docker service, you need to download the image first and then create a container with that image.
+For specific configurations of volumes and networks, you should refer to the official documentation.
+The approach shown in this guide uses <a href="https://docs.docker.com/compose/">Docker Compose</a></p>
+<h2 id="using-docker-compose">Using Docker Compose</h2>
+<p>To use <strong>Docker Compose</strong>, you need to use the terminal. Within Docker Desktop, you can launch a terminal (default: PowerShell) by clicking on the "Terminal" button at the bottom right.</p>
 <blockquote>
-<p>W11 usa come terminale di default PowerShell, wsl.exe fornisce un terminale in stile linux, ma non permette di accedere a tutte le funzionalità di W11 quindi è sconsigliato</p>
-<p>Se provieni da un sistema linux usare PowerShell o i terminali di microsoft è essenzialmente una sofferenza...consiglio l'installazione di <a href="https://gitforwindows.org/">Git Bash</a></p>
+<p>W11 uses PowerShell as the default terminal. While WSL.exe provides a Linux-style terminal, it doesn't allow access to all W11 features, so it is not recommended</p>
+<p>If you come from a Linux system, using PowerShell or one of Microsoft's terminals is essentially a pain... I recommend installing <a href="https://gitforwindows.org/">Git Bash</a> for a more unix experience.</p>
 </blockquote>
-<h3 id="controllare-che-docker-compose-sia-installato">Controllare che docker compose sia installato</h3>
-<pre><code class="language-powershell">&gt; docker compose -v
+<h3 id="checking-if-docker-compose-is-installed">Checking if Docker Compose is installed</h3>
+<pre><code class="language-powershell">docker compose -v
 </code></pre>
-<h3 id="creare-le-cartelle-necessarie">Creare le cartelle necessarie</h3>
-<p>Per semplificarmi eventuali lavori di riorganizzazione o espansione futuri userò una organizzazione delle cartelle ispirata al progetto <a href="https://github.com/louislam/dockge">Dockge</a>
-- le configurazioni si troveranno all'interno della cartella <code>C:\Users\&lt;user&gt;\Docker\stacks\&lt;stack name&gt;</code>
-- all'interno della cartella di uno stack si troverà il file <code>docker-compose.yml</code>, il file <code>.env</code> e gli eventuali volumi locali</p>
+<h3 id="creating-the-necessary-folders">Creating the necessary folders</h3>
+<p>To simplify future docker container creation. I usually use a folder schema inspired by the project <a href="https://github.com/louislam/dockge">Dockge</a>
+- Configurations will be found within the folder <code>C:\Users\&lt;user&gt;\Docker\stacks\&lt;stack name&gt;</code>
+- Within a stack folder, you will find the file <code>docker-compose.yml</code>, the file <code>.env</code>, and any local volumes</p>
 <pre><code class="language-PowerShell">&gt; cd $HOME
 &gt; # Create Folders
 &gt; mkdir \Docker
@@ -162,14 +165,15 @@ All'interno di docker desktop è possibile lanciare un terminale (default: power
 &gt; New-Item \Docker\Stacks\webui\docker-compose.yml
 </code></pre>
 <blockquote>
-<p>To edit file directly inside PowerShell you can install a shell editor like vim or nano using a command like <code>&gt; winget install GNU.Nano</code> or <code>&gt; winget install vim.vim</code>, although for the last one you should add vim to PATH</p>
-<p>For adding vim to PATH (as explained <a href="https://stackoverflow.com/questions/61711262/vim-the-term-vim-is-not-recognized-as-the-name-of-a-cmdlet">here</a>) you should:
+<p>To edit files directly inside PowerShell, you can install a shell editor like vim or nano using a command like <code>&gt; winget install GNU.Nano</code> or <code>winget install vim.vim</code>, although vim to be added to PATH</p>
+<p>For adding vim to PATH (as explained <a href="https://stackoverflow.com/questions/61711262/vim-the-term-vim-is-not-recognized-as-the-name-of-a-cmdlet">here</a>
+), you should:
 - Go to <code>Control Panel -&gt; System -&gt; Edit the system environment variables</code>
 - Click <code>Environment Variables</code> and find the <code>PATH</code> variable
 - Click <code>edit</code>
-Check if Vim is here, otherwise click "new" -&gt; Click "browse" -&gt; Navigate to the Vim executable that you installed go to</p>
+- Check if Vim is here, otherwise click <code>new</code> then click <code>browse</code> and navigate to the Vim executable that you installed</p>
 </blockquote>
-<p>Una volta creato il file modificalo usando un editor da riga di comando (come [[VIM]] o nano) o aprendo il file con un editor come il blocco note, notepad++ o visual studio code</p></div>
+<p>Once created, modify it using a command-line editor (like [[VIM]] or nano) or by opening the file with an editor like Notepad++, Visual Studio Code, etc.</p></div>
             </div>
         </div>
 
