@@ -1,4 +1,4 @@
-# Come installare ollama
+# How to install ollama
 Ollama could be installed on his own or in a single docker-compose with open-webui
 
 For the installation with docker-compose go to the [all-in-one](./all-in-one.md) guide)
