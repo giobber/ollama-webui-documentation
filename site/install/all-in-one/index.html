@@ -96,12 +96,38 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#how-to-install-ollama-and-webui-with-a-single-docker-compose-file" class="nav-link">How to install ollama and webui with a single docker-compose file</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#how-to-update" class="nav-link">How to update</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-</div>
+<h1 id="how-to-install-ollama-and-webui-with-a-single-docker-compose-file">How to install ollama and webui with a single docker-compose file</h1>
+<blockquote>
+<p>You can find the updated version of the docker compose file inside <a href="https://github.com/giobber/sutra-llm4proposal/tree/develop/docker">the repository</a></p>
+</blockquote>
+<p>The simplest and best way to handle ollama and open-webui is to install both services with a single docker-compose file</p>
+<p>If you are on windows I suggest to save this file inside a folder like <code>C:\Users\&lt;user&gt;\Docker\stacks\open-webui</code> or in a dedicated directory in the document folder
+If you are on linux a I suggest a path like <code>/home/&lt;user&gt;/stacks/open-webui</code>.</p>
+<p>Defined the stack folder save the docker compose file by copying the one at <a href="https://github.com/giobber/sutra-llm4proposal/tree/develop/docker">this link</a>.
+Save it as <code>docker-compose.yaml</code>, then in a terminal able to execute docker commands (or inside Docker Desktop terminal) go to the folder with the docker compose file and launch</p>
+<pre><code class="language-bash">docker compose up -d
+</code></pre>
+<h2 id="how-to-update">How to update</h2>
+<p>To update the containers, inside a terminal, go to the directory with the docker-compose file the execute</p>
+<pre><code class="language-bash"># It will download the new images
+docker compose pull
+# It will recreate the containers
+docker compose up -d
+</code></pre></div>
             </div>
         </div>
 
