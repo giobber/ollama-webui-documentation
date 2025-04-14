@@ -10,6 +10,9 @@ services:
       - "${OLLAMA_PORT:-11434}:11434"
     volumes:
       - ollama:/root/.ollama
+    devices:
+      - /dev/dri
+      - /dev/kfd
 
   open-webui:
     container_name: ${PROJECT_NAME:-llm4proposal}_open-webui
