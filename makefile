@@ -1,4 +1,4 @@
-include .env
+-include docker/.env
 GPU_MODE ?= cuda
 
 .PHONY: venv envfile install serve build
@@ -7,8 +7,7 @@ venv:
 	uv venv .venv
 
 envfile:
-	cp -n .env.default .env
-	cp -n docker/.env.default docker/.env
+	cp --update=none docker/.env.default docker/.env
 
 install:
 	uv pip install mkdocs mkdocs-landing
