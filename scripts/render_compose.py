@@ -37,9 +37,6 @@ def build(
 
     content = template.render(mode=mode)
 
-    print(output)
-    print(content)
-    return
     with open(output, "wt") as fp:
         fp.write(content)
 
