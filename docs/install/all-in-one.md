@@ -7,7 +7,7 @@ If you are on windows I suggest to save this file inside a folder like `C:\Users
 If you are on linux a I suggest a path like `/home/<user>/stacks/open-webui`.
 
 Defined the stack folder save the docker compose file by copying the one at [this link](https://github.com/giobber/sutra-llm4proposal/tree/develop/docker).
-Save it as `docker-compose.yaml`, then in a terminal able to execute docker commands (or inside Docker Desktop terminal) go to the folder with the docker compose file and launch
+Save it as `docker-compose.yaml` or `compose.yaml`, then in a terminal able to execute docker commands (or inside Docker Desktop terminal) go to the folder with the docker compose file and launch
 ```bash
 docker compose up -d
 ```
