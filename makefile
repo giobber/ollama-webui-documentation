@@ -4,7 +4,8 @@ venv:
 	uv venv .venv
 
 envfile:
-	cp docker/.env.default docker/.env
+	cp -n .env.default .env
+	cp -n docker/.env.default docker/.env
 
 install:
 	uv pip install mkdocs mkdocs-landing
@@ -15,9 +16,16 @@ serve:
 build:
 	.venv/bin/mkdocs build
 
+.PHONY: render-compose
+render-compose:
+	uv run scripts/render_compose.py --mode cpu
+	uv run scripts/render_compose.py --mode rocm
+	uv run scripts/render_compose.py --mode cuda
+
+
 .PHONY: docker-update
 
-compose=docker compose -f docker/compose.yaml
+compose=docker compose -f docker/compose.${GPU_MODE:-cuda}.yaml
 
 docker-update:
 	$(compose) pull
