@@ -17,7 +17,7 @@ build:
 
 .PHONY: docker-update
 
-compose="docker compose -f docker/docker-compose.yaml"
+compose=docker compose -f docker/docker-compose.yaml
 
 docker-update:
 	$(compose) pull
