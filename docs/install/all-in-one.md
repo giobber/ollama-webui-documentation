@@ -6,7 +6,12 @@ The simplest and best way to handle ollama and open-webui is to install both ser
 If you are on windows I suggest to save this file inside a folder like `C:\Users\<user>\Docker\stacks\open-webui` or in a dedicated directory in the document folder
 If you are on linux a I suggest a path like `/home/<user>/stacks/open-webui`.
 
-Defined the stack folder save the docker compose file by copying the one at [this link](https://github.com/giobber/sutra-llm4proposal/tree/develop/docker).
+Defined the stack folder, save the docker compose file by copying the one comaptible with your hardware at [this link](https://github.com/giobber/sutra-llm4proposal/tree/develop/docker).
+
+- Use `cpu` variant if you don't have an NVIDIA GPU or a ROCm compatible AMD GPU
+- Use `cuda` variant if you have and want to use a NVIDIA GPU card
+- Use `rocm` variant if you have and want to use a ROCm compatible AMD GPU card
+
 Save it as `docker-compose.yaml` or `compose.yaml`, then in a terminal able to execute docker commands (or inside Docker Desktop terminal) go to the folder with the docker compose file and launch
 ```bash
 docker compose up -d
