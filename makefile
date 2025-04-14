@@ -1,3 +1,6 @@
+include .env
+GPU_MODE ?= cuda
+
 .PHONY: venv envfile install serve build
 
 venv:
@@ -25,7 +28,7 @@ render-compose:
 
 .PHONY: docker-update
 
-compose=docker compose -f docker/compose.${GPU_MODE:-cuda}.yaml
+compose=docker compose -f docker/compose.${GPU_MODE}.yaml
 
 docker-update:
 	$(compose) pull
