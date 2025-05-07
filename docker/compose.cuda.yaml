@@ -14,7 +14,7 @@ services:
       resources:
         reservations:
           devices:
-            - driver: cpu
+            - driver: nvidia
               count: all
               capabilities: [gpu]
 
@@ -33,7 +33,7 @@ services:
       resources:
         reservations:
           devices:
-            - driver: cpu
+            - driver: nvidia
               count: all
               capabilities: [gpu]
 

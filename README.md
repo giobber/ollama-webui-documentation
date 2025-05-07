@@ -17,7 +17,7 @@ To see the actual version of the documentation you can navigate the [docs](docs/
 For a more complete guide go to the documentation site
 
 ```bash
-# I needed create .env file and edit settings
+# Create .env file and edit settings
 $ cp docker/.env.default docker/.env
 
 # Create docker containers
