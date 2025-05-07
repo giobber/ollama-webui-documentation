@@ -14,7 +14,7 @@ services:
   open-webui:
     container_name: ${PROJECT_NAME:-llm4proposal}_open-webui
     env_file: .env
-    image: ghcr.io/open-webui/open-webui:main
+    image: ghcr.io/open-webui/open-webui:${WEBUI_VERSION:-latest}
     restart: unless-stopped
     ports:
       - "${WEBUI_PORT:-3000}:8080"
