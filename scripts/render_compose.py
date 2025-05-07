@@ -6,11 +6,12 @@
 # ]
 # ///
 
-import os, enum
-from typing import Optional
-import typer
-import jinja2
+import enum
 from pathlib import Path
+from typing import Optional
+
+import jinja2
+import typer
 
 env = jinja2.Environment()
 cli = typer.Typer()
