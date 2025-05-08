@@ -4,27 +4,27 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
         
         
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>LLM 4 Horizon</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/fontawesome.min.css" rel="stylesheet">
-        <link href="css/brands.min.css" rel="stylesheet">
-        <link href="css/solid.min.css" rel="stylesheet">
-        <link href="css/v4-font-face.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>How to configure Open WebUI - LLM 4 Horizon</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
         <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
         <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href=".">LLM 4 Horizon</a>
+                <a class="navbar-brand" href="..">LLM 4 Horizon</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -35,31 +35,31 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="nav-item">
-                                <a href="." class="nav-link active" aria-current="page">Home</a>
+                                <a href=".." class="nav-link">Home</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Installation</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="install/ollama/" class="dropdown-item">Ollama</a>
+    <a href="../install/ollama/" class="dropdown-item">Ollama</a>
 </li>
                                     
 <li>
-    <a href="install/docker/" class="dropdown-item">Docker Desktop</a>
+    <a href="../install/docker/" class="dropdown-item">Docker Desktop</a>
 </li>
                                     
 <li>
-    <a href="install/open-webui/" class="dropdown-item">Open WebUI</a>
+    <a href="../install/open-webui/" class="dropdown-item">Open WebUI</a>
 </li>
                                     
 <li>
-    <a href="install/all-in-one/" class="dropdown-item">All In One</a>
+    <a href="../install/all-in-one/" class="dropdown-item">All In One</a>
 </li>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="usage/" class="nav-link">Usage</a>
+                                <a href="../usage/" class="nav-link">Usage</a>
                             </li>
                         </ul>
 
@@ -69,16 +69,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="install/ollama/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -97,13 +87,25 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#llm-4-horizon" class="nav-link">LLM 4 Horizon</a>
+            <li class="nav-item" data-bs-level="1"><a href="#how-to-configure-open-webui" class="nav-link">How to configure Open WebUI</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#where-to-go" class="nav-link">Where to go</a>
+            <li class="nav-item" data-bs-level="2"><a href="#connect-ollama" class="nav-link">Connect ollama</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#the-project" class="nav-link">The Project</a>
+            <li class="nav-item" data-bs-level="2"><a href="#connect-openai" class="nav-link">Connect OpenAI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#prepare-models" class="nav-link">Prepare models</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#configure-document-management" class="nav-link">Configure document management</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#creating-knowledge-andor-custom-models" class="nav-link">Creating knowledge and/or custom models</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -114,37 +116,30 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="llm-4-horizon">LLM 4 Horizon</h1>
-<p>This documentation contains info about installing, updating and using a <strong>local</strong> AI LLM environment based on <a href="https://ollama.com/">ollama</a> and <a href="https://docs.openwebui.com/">open-webui</a> with a similar experience of ChatGPT services.</p>
-<h2 id="where-to-go">Where to go</h2>
-<ul>
-<li>Installation<ul>
-<li><a href="install/docker/">docker</a></li>
-<li><a href="install/ollama/">ollama</a></li>
-<li><a href="install/open-webui/">open-webui</a></li>
-<li><a href="install/all-in-one/">all-in-one</a></li>
-</ul>
-</li>
-<li><a href="configuration/">Configuration</a></li>
-<li><a href="usage/">Usage</a></li>
-</ul>
-<h2 id="the-project">The Project</h2>
+<h1 id="how-to-configure-open-webui">How to configure Open WebUI</h1>
+<h2 id="connect-ollama">Connect ollama</h2>
+<p><code>Control Panel &gt; Administration Panel &gt; Connections</code>
+You should find <strong>Ollama API</strong> section enabled and a connection string similar to <code>http://ollama:11434</code></p>
+<h2 id="connect-openai">Connect OpenAI</h2>
+<p>TBD</p>
+<h2 id="prepare-models">Prepare models</h2>
+<p>The default <code>context_length</code> for ollama models is 2048 which is sufficient for basic RAG and small document, but too small for long and complex documents. If you're using long document or you want to increase the number of chunk retrieved by RAG, you shuold increment this number.</p>
 <blockquote>
-<p>More info on <a href="https://www.sutra-coop.eu/portfolio/llm4horizon/">sutra-coop.eu</a></p>
+<p>For model like <code>llama3.1:8b</code> Ollama start to use CPU when setting a <code>context_length</code> greater than <code>8192</code>, althought the model can reach up to <code>128000</code>.</p>
 </blockquote>
-<p>The adoption of Large Language Models (LLM) and Artificial Intelligence (AI) is revolutionizing research proposal preparation, increasing productivity and efficiency. However, to fully leverage their potential, it's essential to develop technical and transversal skills, attract specialized talents, and facilitate AI platform customization (such as ChatGPT and Gemini).
-Project Objectives:</p>
-<p>Our project aims to:
-- Identify skill needs to ensure the cooperative's competitiveness;
-- Create training paths and attract highly specialized figures to bridge the gap between demand and supply of skills;
-- Strengthen regional, national, and European collaborative networks.</p>
-<h3 id="activities">Activities:</h3>
-<p>The activities include drafting a strategic plan for attracting and growing skills, planning training courses on technical (LLM, AI, EU regulations, data analysis) and transversal (writing, critical thinking, communication) skills. The project development timeline consists of three main phases:
-- Analysis of needs: Identify the cooperative's skill requirements.
-- Attraction of new profiles: Attract highly specialized figures to bridge the gap between demand and supply of skills.
-- Development of collaborative networks: Strengthen regional, national, and European collaborative networks.</p>
-<h3 id="goal">Goal</h3>
-<p>The goal is to consolidate sustainable use of AI technologies by strengthening the human capital necessary for innovative proposal success.</p></div>
+<p>To set this value go to <code>Control Panel &gt; Administration Panel &gt; Models</code> then click on the pencil icon next to the model you want to edit.
+Click <strong>show</strong> next to <strong>Advanced parameters</strong> and find the row with <code>context_length</code>, by clicking on its right you chould be able to edit the value.</p>
+<blockquote>
+<p>in this page you can also change the image, set a custom name or description, change other custom parameters or set a default knowledge.</p>
+</blockquote>
+<h2 id="configure-document-management">Configure document management</h2>
+<p><code>Control Panel &gt; Administration Panel &gt; Documents</code>
+Here I suggest to set:
+- Chunk dimension to 512, Chunk overlapping to 128
+- Full context mode to off
+- Hybrid Search to on</p>
+<h2 id="creating-knowledge-andor-custom-models">Creating knowledge and/or custom models</h2>
+<p>from <code>Workspace</code> button go to <code>models</code> or <code>knowledge</code></p></div>
             </div>
         </div>
 
@@ -152,13 +147,13 @@ Project Objectives:</p>
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
         <script>
-            var base_url = ".",
+            var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="js/base.js"></script>
-        <script src="search/main.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -223,8 +218,3 @@ Project Objectives:</p>
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.6.1
-Build Date UTC : 2025-05-08 17:17:31.025691+00:00
--->
