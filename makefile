@@ -30,5 +30,6 @@ render-compose:
 compose=docker compose -f docker/compose.${GPU_MODE}.yaml
 
 docker-update:
-	$(compose) pull
+	$(compose) pull ollama
+	$(compose) pull open-webui
 	$(compose) up -d
