@@ -1,7 +1,7 @@
 -include docker/.env
 GPU_MODE ?= cuda
 
-.PHONY: venv envfile install serve build
+.PHONY: venv envfile install
 
 venv:
 	uv venv .venv
@@ -12,13 +12,18 @@ envfile:
 install:
 	uv pip install mkdocs mkdocs-landing
 
-serve:
+
+.PHONY: docs-serve docs-build
+
+docs-serve:
 	.venv/bin/mkdocs serve
 
-build:
+docs-build:
 	.venv/bin/mkdocs build
 
+
 .PHONY: render-compose
+
 render-compose:
 	uv run scripts/render_compose.py --mode cpu
 	uv run scripts/render_compose.py --mode rocm
