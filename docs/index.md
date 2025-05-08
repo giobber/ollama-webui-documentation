@@ -8,6 +8,7 @@ This documentation contains info about installing, updating and using a **local*
     - [ollama](install/ollama.md)
     - [open-webui](install/open-webui.md)
     - [all-in-one](install/all-in-one.md)
+* [Configuration](configuration.md)
 * [Usage](usage.md)
 
 
